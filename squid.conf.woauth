@@ -1,0 +1,9 @@
+http_access allow all
+http_port 3128
+icp_port 0
+cache_store_log none
+access_log none
+cache_log /dev/null
+via off
+forwarded_for delete
+

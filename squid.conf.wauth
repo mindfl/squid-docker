@@ -1,0 +1,18 @@
+auth_param basic program /usr/lib/squid/basic_ncsa_auth /etc/squid/passwd
+auth_param basic children 5
+auth_param basic realm Restricted
+auth_param basic credentialsttl 12 hours
+
+acl ncsa_users proxy_auth REQUIRED
+
+http_access allow ncsa_users
+http_access deny all
+
+http_port 3128
+icp_port 0
+cache_store_log none
+access_log none
+cache_log /dev/null
+via off
+forwarded_for delete
+
